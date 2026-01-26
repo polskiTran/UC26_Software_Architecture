@@ -1,4 +1,4 @@
-[Assignment 1](https://github.com/lunarlunarll123/Arch_Assignment01)
+# [Assignment 1](https://github.com/lunarlunarll123/Arch_Assignment01)
 
 ## Prerequisite
 - Make sure `git` and `java` is installed and in `PATH`
@@ -77,3 +77,23 @@ cloc ./ --unix --by-file --csv --quiet --report-file=logs/vllm_lines.csv
 cd assignment1/
 python scripts_4/merge_comp_freqs.py logs/vllm_freqs.csv logs/vllm_lines.csv > logs/results.csv
 ```
+
+## Python notebook analysis report
+- Install `uv`
+```shell
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+- Install the dependencies
+```shell
+uv sync
+```
+
+- Install the kernel for ipynb
+```shell
+uv run ipython kernel install --user --env VIRTUAL_ENV $(pwd)/.venv --name=SoftwareArchitecture_assignment1
+```
+
+- In the ipynb file selct the `SoftwareArchitecture_assignment1` kernel from selct kernel button
+    - Need the jupyter extention on vscode installed
+    - Also might need to close and open the ipynb file or delete `.venv` file and reran the above command to see the desire kernel
