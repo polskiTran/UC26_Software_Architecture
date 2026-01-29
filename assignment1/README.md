@@ -42,42 +42,6 @@ cd vllm/
 git checkout `git rev-list -n 1 --before="2026-01-26" main`
 ```
 
-## Generate analysis
-- generate log file for maat code tool
-```shell
-cd vllm/
-git log --pretty=format:'[%h] %an %ad %s' --date=short --numstat --before=2026-01-26 > vllm_evo.log
-mv vllm_evo.log /workspaces/UC26_Software_Architecture/assignment1/logs
-```
-- run the log file through maat tool
-```shell
-cd assignment1/
-
-# summary
-java -jar tools/code-maat-1.0.4-standalone.jar -l logs/vllm_evo.log -c git -a summary 
-
-# revisions/effort
-java -jar tools/code-maat-1.0.4-standalone.jar -l logs/vllm_evo.log -c git -a revisions > logs/vllm_freqs.csv 
-```
-    - Make sure in `vllm_freqs.csv` there's nothing before `entity,n-revs` so that it's a correct csv file
-
-- cloc tool
-```shell
-cd vllm/
-
-# summary 
-cloc . 
-
-# complexity 
-cloc ./ --unix --by-file --csv --quiet --report-file=logs/vllm_lines.csv 
-```
-
-- Merge the data
-```shell
-cd assignment1/
-python scripts_4/merge_comp_freqs.py logs/vllm_freqs.csv logs/vllm_lines.csv > logs/results.csv
-```
-
 ## Python notebook analysis report
 - Install `uv`
 ```shell

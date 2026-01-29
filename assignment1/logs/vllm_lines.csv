@@ -1,7 +1,6 @@
-language,filename,blank,comment,code,"github.com/AlDanial/cloc v 1.98  T=5.64 s (626.9 files/s 167766.5 lines/s)"
+language,filename,blank,comment,code,"github.com/AlDanial/cloc v 1.98  T=5.69 s (622.8 files/s 165825.3 lines/s)"
 Python,./vllm/third_party/pynvml.py,865,407,4868
 Python,./vllm/v1/worker/gpu_model_runner.py,673,1061,4332
-CSV,./vllm_lines.csv,0,0,3539
 CUDA,./csrc/rocm/attention.cu,388,289,3038
 Python,./vllm/_custom_ops.py,426,413,2417
 Python,./tests/tokenizers_/test_mistral.py,44,8,2357
@@ -2371,6 +2370,7 @@ Python,./tests/v1/sample/test_topk_topp_sampler.py,27,24,71
 Python,./tests/v1/worker/test_utils.py,17,4,71
 Python,./vllm/model_executor/layers/fused_moe/triton_deep_gemm_moe.py,8,6,71
 Python,./vllm/v1/attention/backends/linear_attn.py,16,2,71
+Fish Shell,./.venv/bin/activate.fish,20,34,70
 Python,./examples/offline_inference/disaggregated_prefill.py,23,34,70
 Python,./examples/offline_inference/kv_load_failure_recovery/decode_example.py,12,3,70
 YAML,./examples/online_serving/chart-helm/values.yaml,19,85,70
@@ -2476,6 +2476,7 @@ Python,./tests/quantization/test_gptq_v2.py,22,25,62
 Python,./vllm/entrypoints/serve/__init__.py,30,2,62
 JSON,./.buildkite/performance-benchmarks/tests/throughput-tests-hpu.json,0,0,61
 YAML,./.github/ISSUE_TEMPLATE/450-ci-failure.yml,7,1,61
+DOS Batch,./.venv/bin/activate.bat,10,0,61
 Python,./benchmarks/cutlass_benchmarks/utils.py,30,9,61
 Markdown,./docs/api/README.md,32,0,61
 Markdown,./docs/getting_started/installation/gpu.xpu.inc.md,23,0,61
@@ -2502,6 +2503,7 @@ Python,./vllm/plugins/io_processors/interface.py,12,5,60
 Python,./vllm/transformers_utils/configs/radio.py,10,28,60
 Python,./vllm/v1/worker/gpu/spec_decode/rejection_sample.py,6,5,60
 Bourne Shell,./.buildkite/scripts/scheduled_integration_test/deepseek_v2_lite_ep_eplb.sh,8,5,59
+Python,./.venv/lib/python3.12/site-packages/_virtualenv.py,22,20,59
 Markdown,./docs/features/quantization/inc.md,30,0,59
 Python,./examples/offline_inference/prompt_embed_inference.py,22,16,59
 Jinja Template,./examples/tool_chat_template_toolace.jinja,5,1,59
@@ -2660,6 +2662,7 @@ Python,./vllm/model_executor/models/transformers/legacy.py,13,30,47
 Python,./vllm/ray/ray_env.py,13,19,47
 Python,./vllm/utils/hashing.py,30,40,47
 Python,./vllm/v1/core/sched/async_scheduler.py,9,10,47
+PowerShell,./.venv/bin/activate.ps1,13,23,46
 CUDA,./csrc/cutlass_extensions/cute_utils.cuh,9,13,46
 CUDA,./csrc/quantization/gptq/compat.cuh,12,6,46
 C/C++ Header,./csrc/quantization/w8a8/cutlass/c3x/scaled_mm_kernels.hpp,10,0,46
@@ -2844,6 +2847,8 @@ Python,./vllm/config/device.py,12,27,36
 Python,./vllm/config/structured_outputs.py,10,32,36
 Python,./vllm/v1/worker/gpu/lora_utils.py,8,3,36
 JSON,./.buildkite/performance-benchmarks/tests/throughput-tests.json,0,0,35
+C Shell,./.venv/bin/activate.csh,14,27,35
+DOS Batch,./.venv/bin/deactivate.bat,4,0,35
 Markdown,./docs/design/mm_processing.md,28,0,35
 Python,./examples/offline_inference/skip_loading_weights_in_engine_init.py,10,8,35
 Python,./examples/pooling/embed/embed_matryoshka_fy_offline.py,11,8,35
@@ -3067,6 +3072,7 @@ Python,./vllm/assets/base.py,10,7,23
 Python,./vllm/attention/utils/kv_sharing_utils.py,4,6,23
 Python,./vllm/utils/__init__.py,8,5,23
 YAML,./.buildkite/test_areas/expert_parallelism.yaml,1,0,22
+Python,./.venv/bin/activate_this.py,10,27,22
 Jinja Template,./examples/pooling/score/template/qwen3_vl_reranker.jinja,1,0,22
 Jinja Template,./examples/template_alpaca.jinja,7,0,22
 Python,./tests/kernels/helion/test_helion_available.py,11,12,22
@@ -3080,6 +3086,7 @@ Python,./vllm/v1/sample/metadata.py,14,8,22
 JSON,./.buildkite/performance-benchmarks/tests/genai-perf-tests.json,0,0,21
 YAML,./.buildkite/test_areas/cuda.yaml,1,0,21
 YAML,./.buildkite/test_areas/models_distributed.yaml,0,1,21
+DOS Batch,./.venv/bin/pydoc.bat,1,0,21
 CUDA,./csrc/quantization/w8a8/cutlass/c3x/scaled_mm_azp_sm90_int8.cu,3,0,21
 CUDA,./csrc/quantization/w8a8/cutlass/c3x/scaled_mm_sm120_fp8.cu,3,0,21
 CUDA,./csrc/quantization/w8a8/cutlass/c3x/scaled_mm_sm90_int8.cu,3,0,21
@@ -3537,4 +3544,4 @@ Python,./vllm/model_executor/layers/fla/__init__.py,0,8,0
 Python,./vllm/model_executor/layers/quantization/compressed_tensors/__init__.py,1,2,0
 Python,./vllm/third_party/flashmla/__init__.py,0,1,0
 Python,./vllm/transformers_utils/configs/speculators/__init__.py,0,2,0
-SUM,,124014,98008,724791
+SUM,,124108,98139,721601
