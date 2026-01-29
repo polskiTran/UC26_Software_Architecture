@@ -10,8 +10,8 @@ java -version
 ## Download code maat SCM tool
 - Download `.jar` if not found in `assignment1/tools/`
 ```shell
-cd assignment1/tools/
-curl -L -O https://github.com/adamtornhill/code-maat/releases/download/v1.0.4/code-maat-1.0.4-standalone.jar
+cd assignment1/
+curl -L -o tools/code-maat-1.0.4-standalone.jar https://github.com/adamtornhill/code-maat/releases/download/v1.0.4/code-maat-1.0.4-standalone.jar
 ```
 
 - Invoke maat tool to check if it's working

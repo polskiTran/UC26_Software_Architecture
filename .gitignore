@@ -6,6 +6,7 @@ code-maat-1.0.4-standalone.jar
 
 # --- end of assignment 1 specific ignore ---
 
+.vscode/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
