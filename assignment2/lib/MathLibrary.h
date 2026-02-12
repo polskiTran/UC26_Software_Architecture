@@ -3,18 +3,18 @@
 
 #pragma once
 
-void Add(int a, int b);
+void Add(int a, int b, void (*callback)(int));
 
-void Subtract(int a, int b);
+void Subtract(int a, int b, void (*callback)(int));
 
-void Multiply(int a, int b);
+void Multiply(int a, int b, void (*callback)(int));
 
-void Divide(int a, int b);
+void Divide(int a, int b, void (*callback)(int));
 
-void Power(int base, int exponent);
+void Cube(int a, void (*callback)(int));
 
-void Square(int a);
+void Square(int a, void (*callback)(int));
 
-void Modulo(int a, int b);
+void Modulo(int a, int b, void (*callback)(int));
 
 #endif // MathLibrary_h

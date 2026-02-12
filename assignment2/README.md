@@ -1,22 +1,20 @@
-Compile and link static library
-```shell
-clang++ ConsoleStatic.cpp StaticLib.cpp -o ConsoleStatic
-
-./ConsoleStatic
+- Install `cmake` on linux
+```bash
+sudo apt install cmake
 ```
 
-Compile and link dynamic library
-```shell
-clang++ -dynamiclib -o DynamicLib.dylib DynamicLib.cpp -std=c++17
+- Build with CMake
+```bash
+# rReead CMakeLists.txt, detects your system/compilers, finds dependencies, and generates native build files (e.g., Makefiles) in the build folder. This keeps source code clean via out-of-source builds.
+cmake -S . -B build
 
-clang++ -o ConsoleDynamic ConsoleDynamic.cpp -I. ./DynamicLib.dylib -Wl,-rpath,@executable_path 
-
-./ConsoleDynamic
+# Invokes the native build tool (e.g., Make, Ninja, MSBuild) on the build directory to compile and link the project. It abstracts platform differences, so the same command works across Windows, Linux, and macOS.
+cmake --build build
 ```
 
-or, alternative
-```shell
-clang++ -dynamiclib -o libDynamic.dylib DynamicLib.cpp -std=c++17
+- Run the built executable
+```bash
+cd assignment2/
 
-clang++ -o ConsoleDynamic ConsoleDynamic.cpp -I. -L. -lDynamic -Wl,-rpath,@executable_path
+./build/Assignment2App
 ```
