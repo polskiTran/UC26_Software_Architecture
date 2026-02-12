@@ -16,5 +16,9 @@ cmake --build build
 ```bash
 cd assignment2/
 
+# for linux
 ./build/Assignment2App
+
+# for window
+.\build\Debug\Assignment2App.exe
 ```
