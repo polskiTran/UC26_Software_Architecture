@@ -1,8 +1,12 @@
+## Prerequisite
+> Make sure `cmake` is installed on your device
 - Install `cmake` on linux
 ```bash
 sudo apt install cmake
 ```
+- Install `cmake` on window - [source](https://cmake.org/download/)
 
+## Build the application
 - Build with CMake
 ```bash
 # Reads CMakeLists.txt, detects your system/compilers, finds dependencies, and generates native build files (e.g., Makefiles) in the build folder. This keeps source code clean via out-of-source builds.
@@ -12,7 +16,7 @@ cmake -S . -B build
 cmake --build build
 ```
 
-- Run the built executable
+## Run the built executable
 ```bash
 cd assignment2/
 
