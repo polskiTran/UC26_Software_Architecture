@@ -16,14 +16,15 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # 3. Create a library for your actual code
-add_library(calculator calculator.cpp)
+add_library(cart_lib INTERFACE)
+target_include_directories(cart_lib INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 
 # 4. Create your test executable
-add_executable(run_tests calculator_test.cpp)
+add_executable(run_tests CartTest.cpp)
 
 # 5. Link Google Test and your code to the test executable
 target_link_libraries(run_tests
-    calculator
+    cart_lib
     GTest::gtest_main # Links gtest and provides a default main() function
 )
 
