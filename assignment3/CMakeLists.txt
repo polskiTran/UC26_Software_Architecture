@@ -1,0 +1,32 @@
+cmake_minimum_required(VERSION 3.14)
+project(uc26-software-architecture-assignment3)
+
+# 1. cpp settings
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 2. fetch gtest from github repo
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+# 3. Create a library for your actual code
+add_library(calculator calculator.cpp)
+
+# 4. Create your test executable
+add_executable(run_tests calculator_test.cpp)
+
+# 5. Link Google Test and your code to the test executable
+target_link_libraries(run_tests
+    calculator
+    GTest::gtest_main # Links gtest and provides a default main() function
+)
+
+# 6. Enable testing in CMake
+include(GoogleTest)
+gtest_discover_tests(run_tests)
