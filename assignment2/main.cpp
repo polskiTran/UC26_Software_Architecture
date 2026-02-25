@@ -2,10 +2,10 @@
 #include "MathLibrary.h"
 
 void MathResult1(int result) {
-    std::cout << "  (>) Math Result: " << float(result) << std::endl;
+    std::cout << "  > Math Result: " << float(result) << std::endl;
 }
 void MathResult2(int result) {
-    std::cout << "  (>) Divide by 3: " << float(result)/3 << std::endl;
+    std::cout << "  > Divide by 3: " << float(result)/3 << std::endl;
 }
 int main() {
     std::cout << "Run MathLibrary with Callbacks MathResult1..." << std::endl;
