@@ -4,7 +4,7 @@
 #include "ItemService.h"
 #include <vector>
 
-// mock item service for prices
+// mock ItemService so we can set the prices for our mock items
 class MockItemService : public ItemService {
 public:
     double getPrice(Item& item) override {
@@ -16,20 +16,21 @@ public:
 };
 
 TEST(CartTotalAmountTest, GetCartTotalAmount) {
-    // make mock item
+  	// mock items
     Item SDcard("1", "SDcard", 1);
     Item LEDlight("2", "LEDlight", 1);
     Item DashCam("3", "DashCam", 2);
-
     std::vector<Item> items = { SDcard, LEDlight, DashCam };
 
-    // add item to cart
+  	// put items to cart
     Cart cart;
     cart.setItems(items);
+
+  	// setting the prices
     MockItemService mockService;
     cart.setItemService(&mockService);
 
+  	// test the getCartTotalAmount
     double result = cart.getCartTotalAmount();
-
     EXPECT_EQ(result, 60);
 }
