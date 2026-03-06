@@ -15,7 +15,7 @@ class InMemoryStorage(UserStorage):
         user.user_id = user_id
         self._data.append(user)
         return user_id
-    
+
     def delete(self, user_id):
         if user_id is None or user_id >= len(self._data):
             return

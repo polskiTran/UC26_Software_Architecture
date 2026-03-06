@@ -2,16 +2,15 @@ from business.model.user import User
 
 
 class UserStorage:
-
     def add(self, user: User) -> int:
         raise NotImplementedError()
 
     def get(self, user_id: int) -> User:
         raise NotImplementedError()
-    
+
     def delete(self, user_id: int):
         raise NotImplementedError()
-    
+
     def update(self, user: User):
         raise NotImplementedError()
 
