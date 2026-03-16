@@ -1,8 +1,7 @@
-from persistance.sqlite_storage import SqliteStorage
-
 from business.exceptions import InvalidUserException, UserNotFoundException
 from business.model.user import User
 from business.user_validator import UserValidator
+from persistance.sqlite_storage import SqliteStorage
 
 
 class UserService:
@@ -21,6 +20,15 @@ class UserService:
         if user is None:
             raise UserNotFoundException()
         return user
+
+    def get_all_users(self) -> list[User]:
+        """
+        Returns all users from the storage.
+        """
+        users = self._user_storage.get_all_users()
+        if not users:
+            raise UserNotFoundException()
+        return users
 
     def update(self, user: User):
         if not self.get(user.user_id):

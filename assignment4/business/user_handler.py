@@ -21,6 +21,15 @@ class UserHandler:
         user = self.user_service.get(user_id_int)
         return user.__dict__
 
+    def get_all_users(self):
+        """
+        Returns all users from the storage.
+        """
+        users = self.user_service.get_all_users()
+        # create dict for each user in users list
+        users_dict = [user.__dict__ for user in users]
+        return users_dict
+
 
 def fault_safe_to_int(user_id):
     try:

@@ -8,6 +8,12 @@ class UserStorage:
     def get(self, user_id: int) -> User:
         raise NotImplementedError()
 
+    def get_all_users(self) -> list[User]:
+        """
+        Returns all users from the storage.
+        """
+        raise NotImplementedError()
+
     def delete(self, user_id: int):
         raise NotImplementedError()
 

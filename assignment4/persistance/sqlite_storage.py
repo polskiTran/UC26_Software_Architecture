@@ -1,7 +1,6 @@
 import sqlite3
 
 from business.model.user import User
-
 from persistance.storage import UserStorage
 
 
@@ -10,6 +9,8 @@ class SqliteStorage(UserStorage):
     CREATE_TABLE_STATEMENT = "CREATE TABLE IF NOT EXISTS users (user_id INTEGER PRIMARY KEY, user_name TEXT, first_name TEXT, last_name TEXT, role INTEGER)"
 
     GET_USER_STATEMENT = "SELECT * FROM users WHERE user_id = ?"
+
+    GET_ALL_USERS_STATEMENT = "SELECT * FROM users"
 
     ADD_USER_STATEMENT = (
         "INSERT INTO users (user_name, first_name, last_name, role) VALUES (?, ?, ?, ?)"
@@ -37,6 +38,17 @@ class SqliteStorage(UserStorage):
         if row is None:
             return None
         return self._row_to_user(row)
+
+    def get_all_users(self):
+        """
+        Returns all users from the storage.
+        """
+        cursor = self._connection.cursor()
+        cursor.execute(self.GET_ALL_USERS_STATEMENT)
+        rows = cursor.fetchall()
+        cursor.close()
+        self._connection.commit()
+        return [self._row_to_user(row) for row in rows]
 
     def add(self, user):
         cursor = self._connection.cursor()

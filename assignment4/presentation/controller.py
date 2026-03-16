@@ -1,6 +1,7 @@
+from flask import Blueprint, jsonify, request
+
 from business.exceptions import InvalidUserException, UserNotFoundException
 from business.user_handler import UserHandler
-from flask import Blueprint, jsonify, request
 
 controller = Blueprint("controller", __name__)
 
@@ -30,3 +31,12 @@ def get_user(user_id):
     except UserNotFoundException:
         return jsonify({"message": "User not found", "user_id": user_id}), 404
     return jsonify(user_data)
+
+
+@controller.route("/users")
+def get_all_users():
+    try:
+        users_data = user_handler.get_all_users()
+    except UserNotFoundException:
+        return jsonify({"message": "No users found"}), 404
+    return jsonify(users_data)
