@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * 
+ */
+module PluginImpl {
+	requires PluginInterface;
+}

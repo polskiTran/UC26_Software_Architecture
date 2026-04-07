@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+/**
+ * 
+ */
+module PluginInterface {
+    exports plugininterface;
+
+}
