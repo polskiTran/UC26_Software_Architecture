@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * 
+ */
+module CoreSystem {
+	requires PluginInterface;
+}
