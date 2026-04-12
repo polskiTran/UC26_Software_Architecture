@@ -1,7 +1,8 @@
-from flask import Flask, request, render_template_string
-from redis import Redis
 import socket
+
 import requests
+from flask import Flask, render_template_string, request
+from redis import Redis
 
 app = Flask(__name__)
 
@@ -73,7 +74,9 @@ def submit_order():
     sku = request.form["sku"]
 
     try:
-        response = requests.post("http://product_app:5000/reduce_stock", json={"sku": sku})
+        response = requests.post(
+            "http://product_app:5000/reduce_stock", json={"sku": sku}
+        )
         data = response.json()
 
         if response.status_code == 200 and data["success"]:
