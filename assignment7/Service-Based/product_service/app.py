@@ -36,6 +36,24 @@ def get_products():
     )
 
 
+@app.route("/price/<sku>", methods=["GET"])
+def get_price(sku):
+    seed_products_if_needed()
+
+    if not db.exists(sku):
+        return jsonify({"success": False, "message": "Product not found"}), 404
+
+    return jsonify(
+        {
+            "success": True,
+            "sku": sku,
+            "name": db.hget(sku, "name"),
+            "price": int(db.hget(sku, "price") or 0),
+            "stock": int(db.hget(sku, "stock") or 0),
+        }
+    )
+
+
 @app.route("/reduce_stock", methods=["POST"])
 def reduce_stock():
     seed_products_if_needed()
@@ -55,6 +73,7 @@ def reduce_stock():
             {
                 "success": True,
                 "product_name": db.hget(sku, "name"),
+                "price": int(db.hget(sku, "price") or 0),
                 "new_stock": new_stock,
             }
         )
